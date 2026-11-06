@@ -1,0 +1,538 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #baff00;
+    --black: #080808;
+    --white: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+span,
+.green {
+    color: var(--green);
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 18px 5%;
+    background: #080808;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #333;
+}
+
+.navbar h1 {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 900;
+}
+
+.navbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--green);
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background: var(--green);
+    color: #111;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px #baff0080;
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    padding: 60px 5%;
+    background:
+        linear-gradient(90deg,
+        rgba(0,0,0,0.95) 0%,
+        rgba(0,0,0,0.75) 45%,
+        rgba(0,0,0,0.1) 100%),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-content h2 {
+    font-size: clamp(38px, 6vw, 68px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+.hero-content p {
+    margin-bottom: 22px;
+}
+
+.hero-content .green {
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* SECTIONS */
+.section {
+    padding: 55px 5%;
+}
+
+.section > h2 {
+    font-size: clamp(24px, 4vw, 34px);
+    font-weight: 900;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.dark {
+    background: #141414;
+}
+
+/* WORKOUT PROGRAMS */
+.program-grid,
+.trainer-grid,
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.program-card {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.program-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.program-card:hover img {
+    transform: scale(1.08);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(transparent, #000 35%);
+}
+
+.overlay h3 {
+    font-size: 19px;
+}
+
+.overlay p {
+    font-size: 14px;
+}
+
+/* TRAINERS */
+.trainer-card {
+    text-align: center;
+    background: #080808;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 18px;
+    transition: transform 0.3s;
+}
+
+.trainer-card:hover {
+    transform: translateY(-6px);
+}
+
+.trainer-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.trainer-card h3 {
+    margin-top: 12px;
+}
+
+.trainer-card p {
+    color: var(--green);
+}
+
+/* FACILITIES */
+.facilities {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.facilities div {
+    border: 1px solid #718f00;
+    padding: 22px 10px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 22px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.facilities div p {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.facilities div:hover {
+    background: #263000;
+    transform: translateY(-4px);
+}
+
+/* SCHEDULE TABLE */
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 450px;
+}
+
+th {
+    background: var(--green);
+    color: #111;
+}
+
+th, td {
+    padding: 14px;
+    border: 1px solid #444;
+    text-align: left;
+}
+
+tr:hover td {
+    background: #222;
+}
+
+/* PRICING CARDS */
+.price-card {
+    background: #f7f7f7;
+    color: #111;
+    padding: 28px 20px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.price-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 18px #baff0060;
+}
+
+.price-card h3 {
+    margin-bottom: 12px;
+}
+
+.price-card h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.price-card small {
+    font-size: 12px;
+}
+
+.price-card p {
+    margin: 12px 0;
+}
+
+.price-card .btn {
+    margin-top: 18px;
+}
+
+.featured {
+    border: 3px solid var(--green);
+}
+
+.featured label {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--green);
+    padding: 4px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* REGISTRATION FORM */
+.form {
+    max-width: 850px;
+    margin: auto;
+    background: #1c1c1c;
+    padding: 28px;
+    border-radius: 10px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.form input,
+.form select {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font: inherit;
+}
+
+.form input:focus,
+.form select:focus {
+    outline: 2px solid var(--green);
+}
+
+.form > .btn {
+    width: 100%;
+    margin-top: 22px;
+}
+
+/* FOOTER */
+footer {
+    padding: 30px 15px;
+    text-align: center;
+    background: #050505;
+    border-top: 1px solid #333;
+}
+
+footer h2 {
+    font-style: italic;
+    font-size: 30px;
+}
+
+footer p {
+    margin-top: 8px;
+    color: #bbb;
+    font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .program-grid,
+    .trainer-grid,
+    .price-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .program-grid,
+    .trainer-grid,
+    .price-grid,
+    .facilities,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 380px;
+        background-position: center;
+    }
+
+    .section {
+        padding: 40px 5%;
+    }
+
+    .form {
+        padding: 18px;
+    }
+}
+
+/* ATTRACTIVE GYM HERO BACKGROUND */
+.hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    padding: 60px 6%;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.78) 45%,
+            rgba(0, 0, 0, 0.25) 100%
+        ),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-bottom: 2px solid #baff00;
+}
+
+/* Hero Heading */
+.hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 900;
+    line-height: 1.05;
+    font-style: italic;
+    margin: 15px 0;
+    color: white;
+    text-shadow: 2px 3px 15px #000;
+}
+
+.hero-content h2 span {
+    color: #baff00;
+}
+
+.hero-content p {
+    color: #eeeeee;
+    font-size: 17px;
+    margin-bottom: 22px;
+}
+
+/* Attractive Button */
+.hero-content .btn {
+    box-shadow: 0 0 18px #baff0060;
+}
+
+.hero-content .btn:hover {
+    box-shadow: 0 0 30px #baff00;
+    transform: translateY(-4px);
+}
+
+/* PREMIUM DARK SECTION BACKGROUND */
+.dark {
+    background:
+        radial-gradient(
+            ellipse at top right,
+            #263400 0%,
+            #141414 45%,
+            #080808 100%
+        );
+}
+
+/* MAIN SECTION BACKGROUND */
+.section:not(.dark) {
+    background:
+        linear-gradient(
+            135deg,
+            #111111,
+            #1c2110,
+            #080808
+        );
+}
+
+/* NEON BORDER EFFECT */
+.program-card:hover,
+.trainer-card:hover {
+    border: 1px solid #baff00;
+    box-shadow: 0 0 18px #baff0030;
+}
+
+/* SECTION HEADINGS */
+.section > h2 {
+    color: white;
+    text-shadow: 0 0 12px #baff0020;
+}
+
+.section > h2 span {
+    color: #baff00;
+}
+
+/* MEMBERSHIP HIGHLIGHT */
+.featured {
+    box-shadow: 0 0 20px #baff0035;
+}
+
+/* SMOOTH PAGE */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
